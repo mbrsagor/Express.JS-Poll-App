@@ -2,6 +2,10 @@ const express = require('express');
 
 const app = express();
 
+
+// Template engine
+app.set('view engine', 'ejs');
+
 // Create route
 
 app.get('/json', (req, res) => {
@@ -10,7 +14,7 @@ app.get('/json', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.send("Hello, I'm homepage");
+    res.render("index");
 });
 
 app.get('*', (req, res) => {
