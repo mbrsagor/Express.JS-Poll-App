@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const pollController = require('./pollController');
 
 const app = express();
 
@@ -13,10 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Route
-app.get('/create', (req, res) => {
-    res.render('create');
-})
-
+app.get('/create', pollController.createPollGetController);
+app.post('/create', pollController.createPollPostController);
 app.get('/', (req, res) => {
     res.render('home');
 })

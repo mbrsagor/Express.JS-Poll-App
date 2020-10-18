@@ -28,10 +28,10 @@
                             <div id="optoins">
                                 <p>Enter your options</p>
                                 <div class="form-control">
-                                    <input type="text" name="option1" class="form-control" placeholder="Option 1">
+                                    <input type="text" name="options" class="form-control" placeholder="Option 1">
                                 </div>
                                 <div class="form-control">
-                                    <input type="text" name="option2" class="form-control" placeholder="Option 2">
+                                    <input type="text" name="options" class="form-control" placeholder="Option 2">
                                 </div>
                                 <button id="addOption" class="btn btn-info btn-sm mt-3 mb-3">Add more option</button>
                             </div>
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- Custom javascript -->
@@ -64,7 +64,7 @@
 
         let input = document.createElement('input');
         input.type = 'text';
-        input.name = 'option' + currentOptonNumber;
+        input.name = 'options';
         input.placeholder = 'Option ' + currentOptonNumber++;
         input.className = 'form-control';
 
