@@ -1,26 +1,19 @@
 const express = require('express');
+const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const app = express();
 
-
-// Template engine
-app.set('view engine', 'ejs');
-
-// Create route
-
-app.get('/json', (req, res) => {
-    let _data = {name: 'mbr-sagor', age:25, phone:'+8801773474709', address:'Dhaka-Bangladesh'}
-    res.json(_data);
-})
+// Middleware app
+app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.render("index");
-});
-
-app.get('*', (req, res) => {
-    res.send("<h1>Sorry! 404 not found.</h1>");
-});
-
+    res.json({
+        message: 'I am root route'
+    })
+})
 
 
 // Server config
