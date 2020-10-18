@@ -5,7 +5,17 @@ The project is basically node.JS base `Express framework` poll app project.
 
 ##### Project setup and install:
 
- <h3> Requirements</h3>
+The following steps will walk you thru installation on a Mac, Linux should be similar. It's also possible to develop on a Windows machine, but I have not documented the steps. If you've `expess.js` apps on Windows, you should have little problem getting up and running.
+
+On Mac
+```
+$ brew install node
+$ brew install mongodb-community@4.4
+$ brew cask install visual-studio-code
+```
+
+#### Connect and Use MongoDB
+In your terminal run the command `mongo`
 
 * Install Node.JS
 * Install Express.JS
@@ -19,3 +29,11 @@ cd Express.JS-Poll-App/
 npm install
 npm start
 ```
+
+##### Technical features:
+* nodemon
+* express 
+* mongoose 
+* morgan 
+* ejs
+
