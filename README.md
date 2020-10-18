@@ -7,9 +7,9 @@ The project is basically node.JS base `Express framework` poll app project.
 
  <h3> Requirements</h3>
 
- -Install Node.JS
- -Install Express.JS
- -Install MongoDB
+* Install Node.JS
+* Install Express.JS
+* Install MongoDB
 
 ###### First off all clone the project from git repo then follow the documenation.
 
