@@ -4,18 +4,24 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+// Template engine
+app.set('view engine', 'ejs');
+
 // Middleware app
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'I am root route'
-    })
+// Route
+app.get('/create', (req, res) => {
+    res.render('create');
 })
 
-// // Server config
+app.get('/', (req, res) => {
+    res.render('home');
+})
+
+// Server Port
 const PORT = process.env.PORT || 3000
 
 // MongoDB
