@@ -15,9 +15,22 @@ app.get('/', (req, res) => {
     })
 })
 
-
-// Server config
+// // Server config
 const PORT = process.env.PORT || 3000
-app.listen(PORT, () => {
-    console.log(`Starting development server at http://localhost:${PORT}\nSystem check identified no issues\nQuit the development server with CONTROL-C.`);
-})
+
+// MongoDB
+mongoose.connect('mongodb://localhost:27017/poll', { useNewUrlParser: true })
+    .then(() => {
+        app.listen(3000, () => {
+            console.log(`Starting development server at http://localhost:${PORT}\nSystem check identified no issues\nQuit the development server with CONTROL-C.`);
+         })
+    }).catch(e => {
+        console.log(`Error: ${e}`);
+    })
+
+
+// // Server config
+// const PORT = process.env.PORT || 3000
+// app.listen(PORT, () => {
+//     console.log(`Starting development server at http://localhost:${PORT}\nSystem check identified no issues\nQuit the development server with CONTROL-C.`);
+// })
