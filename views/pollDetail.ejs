@@ -26,7 +26,7 @@
                             <form action="/polls/<%= poll._id%>" method="POST">
                                 <% for (let option  of poll.options) {%>
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="option" id="<%= option._id%>" class="custom-control-input" value="<%= option.name %>">
+                                        <input type="radio" name="option" id="<%= option._id%>" class="custom-control-input" value="<%= option._id %>">
                                         <label class="custom-control-label" for="<%= option._id%>"><%= option.name %></label>
                                     </div>
                                 <%} %>

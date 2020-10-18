@@ -18,6 +18,7 @@ app.get('/create', pollController.createPollGetController);
 app.post('/create', pollController.createPollPostController);
 app.get('/polls', pollController.getAllPolls);
 app.get('/polls/:id', pollController.pollDetailController);
+app.post('/polls/:id', pollController.pollPostController);
 
 app.get('/', (req, res) => {
     res.render('home');

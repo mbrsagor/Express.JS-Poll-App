@@ -53,3 +53,27 @@ exports.pollDetailController = async (req, res, next) => {
         console.log(e);
     }
 }
+
+exports.pollPostController = async (req, res, next) => {
+    let id = req.params.id;
+    let optionId = req.body.option;
+
+    try {
+        let poll = await Poll.findById(id);
+        let options = [...poll.options];
+
+        let index = options.findIndex(o => o.id === optionId);
+        // console.log(index);
+        options[index].vote = options[index].vote + 1;
+        let totalVote = poll.totalVote + 1;
+        await Poll.findOneAndUpdate(
+            { _id: poll._id },
+            {$set: {options, totalVote}}
+        )
+
+        res.redirect('/polls/' + id);
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
