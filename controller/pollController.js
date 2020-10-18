@@ -1,4 +1,4 @@
-const Poll = require('./poll');
+const Poll = require('../models/poll');
 
 exports.createPollGetController = (req, res, next) => {
     res.render('create');

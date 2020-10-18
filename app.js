@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-const pollController = require('./pollController');
+const pollController = require('./controller/pollController');
 
 const app = express();
 
