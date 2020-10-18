@@ -47,7 +47,16 @@ exports.pollDetailController = async (req, res, next) => {
     let id = req.params.id;
     try {
         let poll = await Poll.findById(id);
-        res.render('pollDetail', { poll });
+        let options = [...poll.options];
+        let result = [];
+        options.forEach(option => {
+            let parcentance = (option.vote * 100) / poll.totalVote;
+            result.push({
+                ...option._doc,
+                parcentance : parcentance ? parcentance : 0
+            })
+        })
+        res.render('pollDetail', { poll, result });
     }
     catch (e) {
         console.log(e);

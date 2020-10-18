@@ -19,7 +19,14 @@
                         <h5 class="card-title">Poll: <%= poll.title%></h5>
                         <p class="card-text">Poll: <%= poll.description%></p>
                         <div class="result">
-                            Result: 
+                            <h5>Result: </h5>
+                            <ul class="list-group">
+                                <% for(let  r of result) {%>
+                                    <li class="list-group-item">
+                                        <p><%= r.name %> --> <strong><%= r.parcentance.toFixed(2) %>%</strong></p>
+                                    </li>
+                                <%} %>
+                            </ul>
                         </div>
                         <div class="my-4">
                             <h5>What is your opinion</h5>
