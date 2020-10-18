@@ -37,9 +37,3 @@ mongoose.connect('mongodb://localhost:27017/poll', { useNewUrlParser: true })
         console.log(`Error: ${e}`);
     })
 
-
-// // Server config
-// const PORT = process.env.PORT || 3000
-// app.listen(PORT, () => {
-//     console.log(`Starting development server at http://localhost:${PORT}\nSystem check identified no issues\nQuit the development server with CONTROL-C.`);
-// })
