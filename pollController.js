@@ -42,3 +42,14 @@ exports.getAllPolls = async (req, res, next) => {
         console.log(e);
     }
 }
+
+exports.pollDetailController = async (req, res, next) => {
+    let id = req.params.id;
+    try {
+        let poll = await Poll.findById(id);
+        res.render('pollDetail', { poll });
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
