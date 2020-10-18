@@ -1,2 +1,2 @@
-# Express.JS Blog Website
-The project is basically node.JS base `Express framework` blog project.
+# Express.JS Poll App
+The project is basically node.JS base `Express framework` poll app project.
