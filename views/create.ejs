@@ -25,7 +25,7 @@
                                 <label for="description">Poll Description</label>
                                 <textarea name="description" id="description" class="form-control"></textarea>
                             </div>
-                            <div class="optoins">
+                            <div id="optoins">
                                 <p>Enter your options</p>
                                 <div class="form-control">
                                     <input type="text" name="option1" class="form-control" placeholder="Option 1">
@@ -35,7 +35,7 @@
                                 </div>
                                 <button id="addOption" class="btn btn-info btn-sm mt-3 mb-3">Add more option</button>
                             </div>
-                            <button class="btn btn-success btn-sm">Save</button>
+                            <button type="submit" class="btn btn-success btn-sm">Save</button>
                         </form>
                     </div>
                 </div>
@@ -45,8 +45,32 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="text/javascript">
+<!-- Custom javascript -->
+<script>
+    let options = document.getElementById('options');
+    let addOption = document.getElementById('addOption');
+    let currentOptonNumber = 3;
 
+    addOption.addEventListener('click', function(e){
+        e.preventDefault();
+        let option = creaetNewOption();
+        options.appendChild(option);
+
+    });
+
+    function creaetNewOption(){
+        let div = document.createElement('div');
+        div.className = 'form-group';
+
+        let input = document.createElement('input');
+        input.type = 'text';
+        input.name = 'option' + currentOptonNumber;
+        input.placeholder = 'Option ' + currentOptonNumber++;
+        input.className = 'form-control';
+
+        div.appendChild(input);
+        return div;
+    }
 </script>
 </body>
 </html>
